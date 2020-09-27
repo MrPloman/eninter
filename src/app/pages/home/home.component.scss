@@ -1,1 +1,18 @@
-.home {}
+.home {
+    background-image: url("../../../assets/imgs/puertas-automaticas-ascensor.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    &-body {
+        display: flex;
+        flex-direction: row;
+        margin: auto 0;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        app-landing {
+            margin-top: 100px;
+        }
+    }
+}

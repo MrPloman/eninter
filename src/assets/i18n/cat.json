@@ -1,0 +1,12 @@
+{
+    "HELLO": "Hola",
+    "FORM": "Formulari de ENINTER",
+    "SELECT_LANGUAGE": "Selecciona el teu idioma",
+    "ES": "ES",
+    "CAT": "CAT",
+    "EN": "ANG",
+    "WELCOME": "Benvingut al formulari de Eninter",
+    "DESCRIPTION": "Aquesta pàgina és una pàgina de test per registrar usuaris. Si es fa clic a el botó 'Anar al formulari' accedirem a un espai on podrem registrar i editar una sèrie d'usuaris ja registrats. Al seu torn, aquesta plataforma resulta ser multillenguatge, així doncs es pot modificar li idioma sencer de la plataforma des del selector situat a la part superior de la pàgina. ",
+    "GO_FORM": "Anar Al Formulari",
+    "HOME": "Portal ENINTER"
+}

@@ -1,10 +1,14 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
+import {
+  TranslateLoader,
+  TranslateModule,
+  TranslateService,
+} from "@ngx-translate/core";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
-import { AppRoutingModule } from "./app-routing.module";
+import { AppRoutingModule, routes } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
 import { FormComponent } from "./components/form/form.component";
@@ -20,6 +24,10 @@ import { LandingComponent } from "./components/landing/landing.component";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
+}
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
 
 @NgModule({
@@ -38,20 +46,27 @@ export function HttpLoaderFactory(http: HttpClient) {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TranslateModule.forRoot(),
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
+        useFactory: createTranslateLoader,
         deps: [HttpClient],
       },
-    }),
-    TranslateModule.forRoot({
-      defaultLanguage: "es",
+      isolate: false,
     }),
   ],
   providers: [HttpService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(translate: TranslateService) {
+    let browserLang = localStorage.getItem("userLanguage");
+    console.log(browserLang);
+    if (!browserLang) {
+      browserLang = translate.getBrowserLang();
+    }
+    browserLang = browserLang.toLowerCase();
+    translate.use(browserLang);
+  }
+}

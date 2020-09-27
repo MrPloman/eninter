@@ -1,1 +1,18 @@
-<p>header works!</p>
+<div class="header-cont">
+    <div class="header-cont-element" *ngFor="let element of elements">
+        <img *ngIf="element.icon" routerLink="/home" [src]="element.icon" [alt]="element.name" />
+        <h1 class="header-cont-element-title" *ngIf="element.name === 'HOME' || element.name === 'FORM'">
+            {{ element.name | translate }}
+        </h1>
+        <div class="header-cont-element-selector" *ngIf="element.elements">
+            <div class="header-cont-element-selector-title">
+                {{ element.name | translate }}
+            </div>
+            <div class="header-cont-element-selector-elements">
+                <button *ngFor="let selector of element.elements" (click)="selectLang(selector.value)">
+          {{ selector.value | translate }}
+        </button>
+            </div>
+        </div>
+    </div>
+</div>

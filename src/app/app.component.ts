@@ -9,8 +9,5 @@ import { TranslateService } from "@ngx-translate/core";
 export class AppComponent {
   title = "enintern-form";
 
-  constructor(public translate: TranslateService) {
-    translate.setDefaultLang("es");
-    translate.use("es");
-  }
+  constructor() {}
 }

@@ -1,4 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { Router } from "@angular/router";
+import { TranslateService } from "@ngx-translate/core";
+import { ElementHeader } from "../../models/element.model";
+import { element } from "protractor";
 
 @Component({
   selector: "app-header",
@@ -6,7 +10,19 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  @Input() public elements: ElementHeader[];
+  constructor(public router: Router, public translate: TranslateService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.elements);
+  }
+
+  public goHome() {
+    this.router.navigate(["/", "home"]);
+  }
+  public selectLang(lang: string) {
+    let selected = lang.toLowerCase();
+    this.translate.use(selected);
+    localStorage.setItem("userLanguage", selected);
+  }
 }

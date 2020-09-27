@@ -1,0 +1,12 @@
+{
+    "HELLO": "Hello",
+    "FORM": "ENINTER Form's",
+    "SELECT_LANGUAGE": "Select your language",
+    "ES": "SPA",
+    "CAT": "CAT",
+    "EN": "ENG",
+    "WELCOME": "Welcome to the Eninter Form",
+    "DESCRIPTION": "This page is a test page to register users. If the button 'Go to form' is clicked, we will access a space where it can register and edit registered users. At the same time this is multilanguage, so you can modify the entire language of the platform from the selector located at the top of the page. ",
+    "GO_FORM": "Go Form",
+    "HOME": "ENINTER Home"
+}
