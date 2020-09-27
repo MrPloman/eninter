@@ -28,6 +28,17 @@ input {
     border-bottom: rgb(255, 255, 255) 1px solid;
 }
 
+select {
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    border-bottom: rgb(255, 255, 255) 1px solid;
+    padding: 2.5px;
+}
+
 label {
     font-size: 10px;
     color: green;
