@@ -1,1 +1,65 @@
-<p>form works!</p>
+<div class="content-card-info">
+    <div class="content-card-info-row">
+        <div class="content-card-info-column">
+            <label for="name">{{ "NAME" | translate }}</label>
+            <input [(ngModel)]="user.firstName" [ngClass]="{ disabled: disabled }" [value]="user.firstName" type="text" name="firstName" />
+        </div>
+        <div class="content-card-info-column">
+            <label for="name">{{ "SURNAME" | translate }}</label>
+            <input [(ngModel)]="user.lastName" [ngClass]="{ disabled: disabled }" [value]="user.lastName" type="text" name="lastName" />
+        </div>
+    </div>
+    <div class="content-card-info-row">
+        <div class="content-card-info-column">
+            <label for="gender">{{ "GENDER" | translate }}</label>
+            <div class="content-card-info-row-gender">
+                <select name="gender" (change)="selectGender($event.target.value)">
+          <option (change)="selectGender(g)" *ngFor="let g of gender">
+            {{ g.label | translate }}
+          </option>
+        </select>
+            </div>
+        </div>
+        <div class="content-card-info-column">
+            <label for="age">{{ "AGE" | translate }}</label>
+            <input [(ngModel)]="user.age" [ngClass]="{ disabled: disabled }" [value]="user.age" type="number" name="age" />
+        </div>
+    </div>
+
+    <div class="content-card-info-row">
+        <div class="content-card-info-column">
+            <label for="street">{{ "ADDRESS" | translate }}</label>
+            <input [(ngModel)]="user.address.streetAddress" [ngClass]="{ disabled: disabled }" [value]="user.address.streetAddress" type="text" name="streetAddres" />
+        </div>
+        <div class="content-card-info-column">
+            <label for="city">{{ "CITY" | translate }}</label>
+            <input [(ngModel)]="user.address.city" [ngClass]="{ disabled: disabled }" [value]="user.address.city" type="text" name="city" />
+        </div>
+        <div class="content-card-info-column">
+            <label for="city">{{ "STATE" | translate }}</label>
+            <select name="state" (change)="selectState($event.target.value)">
+        <option (change)="selectState(s)" *ngFor="let s of state">
+          {{ s.label | translate }}
+        </option>
+      </select>
+        </div>
+        <div class="content-card-info-column">
+            <label for="postalCode">{{ "CP" | translate }}</label>
+            <input [(ngModel)]="user.address.postalCode" [value]="user.address.postalCode" [ngClass]="{ disabled: disabled }" type="number" name="postalCode" />
+        </div>
+    </div>
+    <div class="content-card-info-row" *ngFor="let phones of user.phoneNumbers">
+        <div class="content-card-info-column">
+            <label for="typePhone">{{ "NUMBER_TYPE" | translate }}</label>
+            <select name="state" (change)="selectPhone($event.target.value)">
+        <option (change)="selectState(s)" *ngFor="let p of phone">
+          {{ p.label | translate }}
+        </option>
+      </select>
+        </div>
+        <div class="content-card-info-column">
+            <label for="phone">{{ "PHONE" | translate }}</label>
+            <input [(ngModel)]="user.phoneNumbers[0].number" [value]="user.phoneNumbers[0].number" type="number" name="phoneNumber" />
+        </div>
+    </div>
+</div>

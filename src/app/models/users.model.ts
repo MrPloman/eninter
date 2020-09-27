@@ -4,7 +4,7 @@ export class UserModel {
   gender: string;
   age: number;
   address: {
-    streetAddress: number;
+    streetAddress: string;
     city: string;
     state: string;
     postalCode: number;

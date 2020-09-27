@@ -1,0 +1,10 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    app-form {
+        padding: 20px;
+        border-radius: 40px;
+        background-color: rgba(94, 94, 94, 0.856);
+        margin: 10px 0 10px 0;
+    }
+}

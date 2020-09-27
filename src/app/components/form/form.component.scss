@@ -1,0 +1,58 @@
+.content {
+    display: flex;
+    &-card {
+        padding: 20px;
+        border-radius: 40px;
+        background-color: rgba(94, 94, 94, 0.856);
+        &-info {
+            display: flex;
+            flex-direction: column;
+            &-row {
+                display: flex;
+                flex-direction: row;
+                &-gender {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
+                &-age {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+            &-column {
+                margin: 5px 5px 5px 5px;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+input {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
+
+.disabled {
+    color: white;
+}
+
+label {
+    color: white;
+    font-size: 15px;
+}
+
+@media (max-width: 1000px) {
+    .content {
+        display: flex;
+        &-card {
+            &-info {
+                &-row {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}

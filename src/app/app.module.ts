@@ -21,6 +21,8 @@ import { RegisterComponent } from "./pages/register/register.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { HttpService } from "./services/http.service";
 import { LandingComponent } from "./components/landing/landing.component";
+import { RadiusComponent } from "./components/radius/radius/radius.component";
+import { FormsModule } from "@angular/forms";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -42,8 +44,10 @@ export function createTranslateLoader(http: HttpClient) {
     CardComponent,
     RegisterComponent,
     LandingComponent,
+    RadiusComponent,
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

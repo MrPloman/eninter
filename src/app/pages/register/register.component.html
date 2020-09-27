@@ -3,6 +3,35 @@
         <app-header [elements]="elements"> </app-header>
     </div>
     <div class="register-body">
-        <app-form></app-form>
+        <div class="register-body-title">
+            <h1>
+                {{ "SELECTED_FORM" | translate }}
+            </h1>
+        </div>
+        <div class="register-body-description">
+            <p>{{ "DESCRIPTION_FORM" | translate }}</p>
+        </div>
+        <div class="register-body-form">
+            <div class="register-body-form-title">
+                <h2>
+                    {{ "NEW_USER" | translate }}
+                </h2>
+            </div>
+            <app-form [disabled]="false" [user]="userSelected"></app-form>
+            <div class="register-body-description" *ngIf="error" style="background-color: none">
+                <p style="color: red; font-size: 20px; margin-top: 10px">
+                    {{ "ERROR" | translate }}
+                </p>
+            </div>
+            <div class="register-body-form-button">
+                <button (click)="createUser()">{{ "CREATE" | translate }}</button>
+            </div>
+        </div>
+        <div class="register-body-title">
+            <h1>{{ "USERS" | translate }}</h1>
+        </div>
+        <div class="register-body-users">
+            <app-card [users]="users" (emitUserSelected)="getUserSelected($event)"></app-card>
+        </div>
     </div>
 </div>
